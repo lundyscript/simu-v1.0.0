@@ -1,4 +1,4 @@
-## About Laravel
+## Sistem Informasi dan Website Sekolah
 
 Website dan Sistem Informasi Sekolah TK Mambaul Ulum  dibuat menggunakan laravel dan tailwindCSS. Website ini bersifat dinamis sehingga konten yang ada didalamnya dapat diubah dan ditambah melalui laman dashboard admin. Laman dashboard admin digunakan untuk mengelola Berita / Pengumuman yang ditampilkan pada website. Admin juga dapat mengelola data Siswa Didik dan Guru melalui laman dashboard admin.
 
