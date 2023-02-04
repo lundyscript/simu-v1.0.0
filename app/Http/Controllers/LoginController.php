@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class LoginController extends Controller
+{
+    public function create()
+    {
+        return view('login', [
+            'title' => 'Login',
+            'active' => 'login'
+        ]);
+    }
+    public function authenticate(Request $request)
+    {
+        $validated = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        if (Auth::attempt($validated)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/admin/dashboard');
+        }
+        return back()->with('loginError', 'Gagal login!');
+    }
+    public function logout()
+    {
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect('/');
+    }
+}

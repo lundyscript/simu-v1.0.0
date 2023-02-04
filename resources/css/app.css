@@ -1,0 +1,141 @@
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@400;700&display=swap);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: "Ubuntu", sans-serif;
+    }
+}
+@layer components {
+    .container {
+        @apply mx-auto;
+    }
+    .navbar {
+        @apply sticky top-0 bg-primary text-primary-content z-50;
+    }
+    .navbar-center {
+        @apply hidden lg:flex;
+    }
+    .namasekolah {
+        @apply btn btn-ghost normal-case text-xl;
+    }
+    .btnnav {
+        @apply btn btn-ghost lg:hidden;
+    }
+    .menuhp {
+        @apply menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52;
+    }
+    .listmenu {
+        @apply p-2 bg-primary-focus rounded-box;
+    }
+    .hero1 {
+        @apply hero h-fit;
+    }
+    .hero-content1 {
+        @apply hero-content flex-col lg:flex-row-reverse;
+    }
+    .hero-content2 {
+        @apply mx-6 max-w-4xl h-fit text-center py-6;
+    }
+    .hero-content3 {
+        @apply max-w-4xl text-center mx-auto my-10;
+    }
+    .hero-content4 {
+        @apply max-w-6xl text-center mx-6 my-10 lg:mx-auto;
+    }
+    .hero-logo {
+        @apply w-28 lg:w-44;
+    }
+    .hero-img {
+        @apply w-3/4 rounded-box lg:w-96;
+    }
+    .box {
+        @apply grid lg:grid-cols-3 gap-6 my-6;
+    }
+    .card {
+        @apply card-compact bg-base-100 shadow-xl;
+    }
+    .card-title {
+        @apply p-0;
+    }
+    .card-image {
+        @apply overflow-hidden relative rounded-t-xl;
+    }
+    .card-body {
+        @apply max-h-fit;
+    }
+    .image-card {
+        @apply h-40 rounded-t-box group-hover:scale-125 group-hover:rotate-6 duration-700;
+    }
+    .imgPreview {
+        @apply mt-3 rounded-box;
+    }
+    .card-body {
+        @apply h-max;
+    }
+    .artikel {
+        @apply max-w-screen-lg mx-6 py-6 lg:mx-auto;
+    }
+    .published {
+        @apply text-neutral text-left py-0 my-0;
+    }
+    .footer {
+        @apply footer-center p-4 bg-base-300 text-base-content;
+    }
+    .footer p {
+        @apply m-0;
+    }
+    .burger {
+        @apply btn btn-ghost drawer-button lg:hidden;
+    }
+    .div-navbar-admin {
+        @apply sticky top-0 z-50;
+    }
+    .navbar-admin {
+        @apply navbar bg-secondary-focus text-primary shadow-lg;
+    }
+    .divbtnjdl {
+        @apply w-max hidden lg:block;
+    }
+    .btnjdl {
+        @apply btn btn-ghost normal-case text-xl;
+    }
+    .dashboard {
+        @apply m-4 grid lg:grid-cols-3 gap-4;
+    }
+    .info-box {
+        @apply grid card rounded-box p-6;
+    }
+    .info-box-jdl-1 {
+        @apply font-bold text-4xl text-neutral;
+    }
+    .info-box-jdl-2 {
+        @apply font-bold text-4xl text-primary;
+    }
+    .btn-action {
+        @apply btn btn-sm btn-primary;
+    }
+    .div-table {
+        @apply overflow-x-auto w-full rounded-box shadow-xl;
+    }
+    h1 {
+        @apply text-3xl lg:text-5xl font-bold py-4;
+    }
+    h2 {
+        @apply text-xl text-left lg:py-6 pb-2;
+    }
+    h3 {
+        @apply text-2xl lg:text-3xl font-bold mb-4;
+    }
+    h4 {
+        @apply badge badge-secondary text-primary text-xs uppercase font-bold mt-16 mb-6 py-4;
+    }
+    p {
+        @apply mb-6 text-justify;
+    }
+    button {
+        @apply btn btn-primary capitalize;
+    }
+}

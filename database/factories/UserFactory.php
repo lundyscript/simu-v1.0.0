@@ -1,0 +1,47 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ */
+class UserFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition()
+    {
+        return [
+            'slug' => fake()->unique->slug(),
+            'email' => fake()->unique()->safeEmail(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'nuptk' => $this->faker->randomNumber(9, true),
+            'nama' => fake()->name(),
+            'tempatlahir' => $this->faker->city(),
+            'tanggallahir' => $this->faker->date(),
+            'jk' => $this->faker->randomElement(['L', 'P']),
+            'alamat' => $this->faker->streetAddress(),
+            'pendidikan' => $this->faker->randomElement(['S2', 'S1', 'SMA']),
+            'gelar' => $this->faker->randomElement(['S.Pd.', 'M.Pd.', 'S.Pd.I.']),
+            'jabatan' => $this->faker->randomElement(['Kepala Sekolah', 'Guru']),
+        ];
+    }
+
+    /**
+     * Indicate that the model's email address should be unverified.
+     *
+     * @return static
+     */
+    public function unverified()
+    {
+        return $this->state(fn (array $attributes) => [
+            'email_verified_at' => null,
+        ]);
+    }
+}
